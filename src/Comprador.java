@@ -120,7 +120,7 @@ public class Comprador extends Agent {
                                 if (subastas.containsKey(propuesta.getReplyWith())) {
                                     subastas.get(propuesta.getReplyWith()).setPrecio(precio);
                                 } else {
-                                    subastas.put(propuesta.getReplyWith(), new Subasta(titulo, precio, propuesta.getSender().getName()));
+                                    subastas.put(propuesta.getReplyWith(), new Subasta(titulo, precio, propuesta.getSender().getLocalName()));
                                     actualizarTabla();
                                 }
                             } else if (subastas.containsKey(propuesta.getReplyWith())) {
@@ -147,7 +147,7 @@ public class Comprador extends Agent {
                         Vender venta = (Vender) contenido.getAction();
                         titulo = venta.getLibro().getTitulo();
                         precio = venta.getLibro().getPrecio();
-                        vendedor = propuesta.getSender().getName();
+                        vendedor = propuesta.getSender().getLocalName();
                         comprador = venta.getComprador();
                         
                         if (comprador.equals(getName())) {

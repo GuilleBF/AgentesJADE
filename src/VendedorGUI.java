@@ -217,7 +217,7 @@ public class VendedorGUI extends javax.swing.JFrame {
     }
 
     void notificarSubasta(String titulo, Float precio, AID ganador) {
-        JOptionPane pane = new JOptionPane("\"" + titulo + "\" fue vendido a " + ganador.getName() + " por " + String.format("%.2f", precio));
+        JOptionPane pane = new JOptionPane("\"" + titulo + "\" fue vendido a " + ganador.getLocalName()+ " por " + String.format("%.2f", precio));
         JDialog dialog = pane.createDialog("Subasta finalizada");
         dialog.setModal(false);
         dialog.setLocationRelativeTo(this);
