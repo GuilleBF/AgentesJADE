@@ -101,8 +101,6 @@ public class Comprador extends Agent {
         @Override
         public void action() {
 
-            actualizarTabla();
-
             ACLMessage propuesta;
             // Tratamos de recibir un CFP
             if ((propuesta = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.CFP))) != null) {
@@ -135,9 +133,11 @@ public class Comprador extends Agent {
             } // Tratamos de recibir un Accept Proposal
             else if ((propuesta = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.ACCEPT_PROPOSAL))) != null) {
                 subastas.get(propuesta.getReplyWith()).setGanador(getName());
+                actualizarTabla();
             } // Tratamos de recibir un Reject Proposal
             else if ((propuesta = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.REJECT_PROPOSAL))) != null) {
                 subastas.get(propuesta.getReplyWith()).setGanador(null);
+                actualizarTabla();
             } // Tratamos de recibir un Inform Proposal
             else if ((propuesta = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.INFORM))) != null) {
                 try {
@@ -152,13 +152,17 @@ public class Comprador extends Agent {
                         if (comprador.equals(getName())) {
                             gui.notificar(titulo, precio, vendedor);
                             System.out.print(titulo);
-                            if(intereses.containsKey(titulo)) intereses.remove(titulo);
+                            if(intereses.containsKey(titulo)){
+                                intereses.remove(titulo);
+                                gui.notificarInteres(titulo, false);
+                            }
                         }
                     }
                     
                     if (subastas.containsKey(propuesta.getReplyWith())) {
                         subastas.remove(propuesta.getReplyWith());
                     }
+                    actualizarTabla();
                 } catch (Codec.CodecException | OntologyException ex) {
                     System.out.println(ex.getMessage());
                 }

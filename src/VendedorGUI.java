@@ -173,7 +173,7 @@ public class VendedorGUI extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     void actualizarSubastas(HashMap<String, Subasta> subastas) {
-        Object[] columnas = {"Titulo", "Precio actual", "Ganador actual"};
+        Object[] columnas = {"Titulo", "Precio", "Ganador"};
 
         Object[][] filas = new Object[subastas.keySet().size()][3];
         int count = 0;

@@ -157,11 +157,11 @@ public class Vendedor extends Agent {
                     myAgent.send(mensaje);
 
                     ((Vendedor) myAgent).subastas.get(idSubasta).setGanador(participantes.get(0).getName());
-
-                    // Actualizamos el precio para la siguiente ronda de propuestas
-                    precio += incremento;
                     ((Vendedor) myAgent).subastas.get(idSubasta).setPrecio(precio);
                     ((Vendedor) myAgent).actualizarSubastas();
+                    
+                    // Actualizamos el precio para la siguiente ronda de propuestas
+                    precio += incremento;
                 }
             }
 
@@ -199,7 +199,7 @@ public class Vendedor extends Agent {
 
             // Enviamos las propuestas
             myAgent.send(cfp);
-
+            
             setup = false;
         }
     }

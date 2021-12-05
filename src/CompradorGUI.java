@@ -184,7 +184,7 @@ public class CompradorGUI extends javax.swing.JFrame {
 
     void actualizarTabla(HashMap<String, Subasta> subastas) {
 
-        Object[] columnas = {"Titulo", "Precio actual", "Vendedor", "Ganador?"};
+        Object[] columnas = {"Titulo", "Precio", "Vendedor", "Ganador?"};
 
         Object[][] filas = new Object[subastas.keySet().size()][4];
         int count = 0;
