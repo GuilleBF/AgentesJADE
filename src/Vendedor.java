@@ -120,7 +120,7 @@ public class Vendedor extends Agent {
                         venta.getLibro().setPrecio(precio);
                         venta.setComprador(participantes.get(0).getName());
                         try {
-                            manager.fillContent(inform, new Action(getAID(), (Vender) venta));
+                            manager.fillContent(inform, new Action(getAID(), venta));
                         } catch (Codec.CodecException | OntologyException ex) {
                             System.out.println(ex.getMessage());
                         }
@@ -180,7 +180,7 @@ public class Vendedor extends Agent {
             cfp.setSender(myAgent.getAID());
             subasta.getLibro().setPrecio(precio);
             try {
-                manager.fillContent(cfp, new Action(getAID(), (Subastar) subasta));
+                manager.fillContent(cfp, new Action(getAID(), subasta));
             } catch (Codec.CodecException | OntologyException ex) {
                 System.out.println(ex.getMessage());
             }

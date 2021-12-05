@@ -109,7 +109,6 @@ public class Comprador extends Agent {
             if ((propuesta = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.CFP))) != null) {
                 try {
                     Action contenido = (Action) manager.extractContent(propuesta);
-                    System.out.print(contenido.getAction().getClass());
                     if (contenido.getAction() instanceof Subastar) {
                         Subastar subasta = (Subastar) contenido.getAction();
                         titulo = subasta.getLibro().getTitulo();
