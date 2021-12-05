@@ -59,7 +59,7 @@ public class VendedorGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Titulo", "Precio actual", "Ganador actual"
+                "Titulo", "Precio", "Ganador actual"
             }
         ) {
             Class[] types = new Class [] {

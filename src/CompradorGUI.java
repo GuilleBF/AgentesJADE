@@ -57,19 +57,10 @@ public class CompradorGUI extends javax.swing.JFrame {
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Titulo", "Precio actual", "Vendedor", "Ganador?"
+                "Titulo", "Precio", "Vendedor", "Ganador?"
             }
         ) {
             Class[] types = new Class [] {
