@@ -42,7 +42,7 @@ public class SubastaLibrosOntology extends jade.content.onto.Ontology  {
     AgentActionSchema subastarSchema = new AgentActionSchema(SUBASTAR);
     add(subastarSchema, Subastar.class);
     AgentActionSchema venderSchema = new AgentActionSchema(VENDER);
-    add(subastarSchema, Vender.class);
+    add(venderSchema, Vender.class);
 
     // adding fields
     libroSchema.add(LIBRO_TITULO, (TermSchema)getSchema(BasicOntology.STRING), ObjectSchema.MANDATORY);
