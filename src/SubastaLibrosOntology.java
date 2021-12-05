@@ -24,7 +24,7 @@ public class SubastaLibrosOntology extends jade.content.onto.Ontology  {
     public static final String LIBRO_TITULO="titulo";
     public static final String LIBRO="Libro";
     public static final String VENDER_COMPRADOR="comprador";
-    public static final String VENDER_TITULO="ejemplar";
+    public static final String VENDER_TITULO="libro";
     public static final String VENDER="Vender";
 
   /**

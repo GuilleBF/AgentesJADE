@@ -143,13 +143,12 @@ public class Comprador extends Agent {
             else if ((propuesta = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.INFORM))) != null) {
                 try {
                     Action contenido = (Action) manager.extractContent(propuesta);
-                    
                     if (contenido.getAction() instanceof Vender) {
-                        Vender subasta = (Vender) contenido.getAction();
-                        titulo = subasta.getLibro().getTitulo();
-                        precio = subasta.getLibro().getPrecio();
+                        Vender venta = (Vender) contenido.getAction();
+                        titulo = venta.getLibro().getTitulo();
+                        precio = venta.getLibro().getPrecio();
                         vendedor = propuesta.getSender().getName();
-                        comprador = subasta.getComprador();
+                        comprador = venta.getComprador();
                         
                         if (comprador.equals(getName())) {
                             gui.notificar(titulo, precio, vendedor);

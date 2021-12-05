@@ -22,12 +22,12 @@ public class Vender implements jade.content.AgentAction {
    /**
    * Protege name: libro
    */
-   private Libro ejemplar;
+   private Libro libro;
    public void setLibro(Libro value) { 
-    this.ejemplar=value;
+    this.libro=value;
    }
    public Libro getLibro() {
-     return this.ejemplar;
+     return this.libro;
    }
    
    /**

@@ -117,6 +117,7 @@ public class Vendedor extends Agent {
                         inform.setLanguage(codec.getName());
                         inform.setOntology(ontology.getName());
                         inform.setSender(myAgent.getAID());
+                        inform.setReplyWith(idSubasta);
                         venta.getLibro().setPrecio(precio);
                         venta.setComprador(participantes.get(0).getName());
                         try {
@@ -124,7 +125,7 @@ public class Vendedor extends Agent {
                         } catch (Codec.CodecException | OntologyException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        myAgent.send(mensaje);
+                        myAgent.send(inform);
 
                         // Le mandamos al ganador el request (lo ignorará, no hace nada, es solo por ajustarse al modelo)
                         mensaje.setPerformative(ACLMessage.REQUEST);
