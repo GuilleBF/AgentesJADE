@@ -244,11 +244,9 @@ public class CompradorGUI extends javax.swing.JFrame {
             });
 
         } else {
-            JOptionPane pane = new JOptionPane("Ya se interesó en ese título");
-            JDialog dialog = pane.createDialog("Interés duplicado");
-            dialog.setModal(false);
-            dialog.setLocationRelativeTo(this);
-            dialog.setVisible(true);
+            SwingUtilities.invokeLater(() -> {
+                ((DefaultListModel) listaIntereses.getModel()).removeElement(titulo);
+            });
         }
     }
 }

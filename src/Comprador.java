@@ -14,8 +14,6 @@ import jade.domain.FIPAException;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Comprador extends Agent {
 
@@ -81,6 +79,7 @@ public class Comprador extends Agent {
                     intereses.put(titulo, precio);
                     gui.notificarInteres(titulo, true);
                 } else {
+                    intereses.remove(titulo);
                     gui.notificarInteres(titulo, false);
                 }
             }
@@ -152,6 +151,7 @@ public class Comprador extends Agent {
                         
                         if (comprador.equals(getName())) {
                             gui.notificar(titulo, precio, vendedor);
+                            System.out.print(titulo);
                             if(intereses.containsKey(titulo)) intereses.remove(titulo);
                         }
                     }
